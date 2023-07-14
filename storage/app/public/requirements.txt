@@ -1,0 +1,6 @@
+pandas
+openpyxl
+python-dotenv
+mysql-connector-python
+sqlalchemy
+datetime

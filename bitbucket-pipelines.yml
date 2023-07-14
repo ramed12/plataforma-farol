@@ -1,0 +1,14 @@
+pipelines:
+  branches:
+    master:
+      - step:
+         name: Deploy to homolog
+         deployment: staging
+         script:
+          - pipe: atlassian/sftp-deploy:0.5.11
+            variables:
+              USER: $SFTP_USERNAME
+              SERVER: $SFTP_HOST
+              REMOTE_PATH: '/var/www/homolog/governo-pe/plataforma-farol'
+              PASSWORD: $SFTP_PASSWORD
+              SSH_KEY: '/opt/atlassian/pipelines/agent/ssh/id_rsa'
